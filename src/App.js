@@ -1,15 +1,23 @@
 import React from 'react'
-
- class App extends React.Component{
+//import Logo from '../public/images/logo.png'
+ // class App extends React.Component{
      
-     render(){
+ //     render(){
          
-         return(
-            <h1> Hello World!</h1>
-             )
+ //         return(
+ //            <h1> Hello World!</h1>
+ //             )
          
-     }
+ //     }
      
- }
+ // }
+ 
+ 
+ const App=()=>(
+  <div>
+  <h1> Hello World2!</h1>
+  
+  </div>
+  )
  
  export default App
