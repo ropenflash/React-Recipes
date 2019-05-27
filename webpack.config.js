@@ -1,9 +1,11 @@
 const HtmlWebpackPlugin=require("html-webpack-plugin")
+const webpack=require("webpack")
 const path=require("path")
 
+require("dotenv").config()
 
 module.exports={
-    entry:"./src/index.js",
+    entry:["whatwg-fetch","./src/index.js"],
     output:{
         path:path.resolve(__dirname,'dist'),
         filename:'./bundle.js'
@@ -32,6 +34,10 @@ module.exports={
         new HtmlWebpackPlugin({
             template:'./public/index.html',
             inject:'body'
+        }),
+        
+        new webpack.DefinePlugin({
+            API_URL:JSON.stringify(process.env.API_URL)
         })
         ],
     
