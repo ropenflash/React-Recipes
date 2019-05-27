@@ -1,8 +1,5 @@
-import path from 'path'
 
-const log=(string)=>{
+import log from './log'
 
-console.log(string)    
-}
 
 log('hello World!')
