@@ -4,10 +4,11 @@ const RecipeList = ({ recipes, style, onClick }) => {
 
     return (
         <div style={style}>
-    <h2>Recipes</h2>
-    <ul>
+    <h2 className='h2'>Recipes</h2>
+    <ul className='list-reset'>
     {recipes.map(recipe=>(
-    <li key={recipe.id} 
+    <li  className='py2 border-bottom border-bottom-dashed'
+    key={recipe.id} 
         style={{cursor:'pointer'}} 
         onClick={()=>{onClick(recipe.id)}}>
     <span>{recipe.name}</span>
