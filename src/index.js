@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
-import './styles/index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import './styles/index.css';
 
-const Mount_ELEMENT = document.getElementById('root')
+const mountElement = document.getElementById('root');
 
-ReactDOM.render(<App/>, Mount_ELEMENT)
+ReactDOM.render(<App/>, mountElement);

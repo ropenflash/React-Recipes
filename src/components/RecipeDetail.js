@@ -1,6 +1,6 @@
-import React from 'react'
-import classNames from 'classnames'
-
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 const RecipeDetail = ({ recipeDetails, style, className }) =>
 
     {
@@ -18,7 +18,7 @@ const RecipeDetail = ({ recipeDetails, style, className }) =>
                 className={classNames('p2 bg-white',className)}
                 style={style}>
     <h2 className='h2'>{recipeDetails.name}</h2>
-    <img className='fit'  src={recipeDetails.image}/>
+    <img className='fit' alt={recipeDetails.name}  src={recipeDetails.image}/>
     <div>
     <span> {recipeDetails.category} </span>
      <span>{recipeDetails.calories} </span>
@@ -41,5 +41,12 @@ const RecipeDetail = ({ recipeDetails, style, className }) =>
 
     }
 
+RecipeDetail.propTypes = {
 
+    className: PropTypes.string,
+    style: PropTypes.object,
+    recipeDetails: PropTypes.object
+
+
+}
 export default RecipeDetail
