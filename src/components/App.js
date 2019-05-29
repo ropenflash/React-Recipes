@@ -3,33 +3,63 @@ import Header from './Header'
 import RecipeList from './RecipeList'
 import RecipeDetail from './RecipeDetail'
 
-//import Logo from '../public/images/logo.png'
- // class App extends React.Component{
-     
- //     render(){
-         
- //         return(
- //            <h1> Hello World!</h1>
- //             )
-         
- //     }
-     
- // }
- console.log(process.env.API_URL)
- console.log(API_URL)
- fetch(API_URL+'/v1/recipes')
- .then(res=>{return res.json()})
- .then(json=>console.log(json))
- 
- 
- const App=()=>(
-  <div>
+class App extends React.Component {
+ constructor(props) {
+  super(props)
+  this.state = {
+   recipes: [],
+   recipeDetails: null
+  }
+
+
+ }
+ componentDidMount() {
+
+  fetch(`https://reactrecipes.herokuapp.com/v1/recipes`)
+   .then(res => res.json())
+   .then((recipes) => {
+    this.setState({ recipes })
+
+   })
+
+ }
+
+ onRecipeClick = (id) => {
+  fetch(`https://reactrecipes.herokuapp.com/v1/recipes/${id}`)
+   .then(res => res.json())
+   .then((recipeDetails) => {
+    this.setState({ recipeDetails })
+
+   })
+
+
+ }
+
+ render() {
+  const { recipes, recipeDetails } = this.state
+
+  return (
+   <div>
   <Header/>
   <main style={{display:'flex'}}>
-  <RecipeList style={{flex:3}}/>
-  <RecipeDetail style={{flex:5}}/>
+  <RecipeList 
+   recipes={recipes} 
+   onClick={this.onRecipeClick} 
+   style={{flex:3}}/>
+  <RecipeDetail 
+     recipeDetails={recipeDetails}
+     style={{flex:5}}/>
   </main>
   </div>
   )
- 
- export default App
+
+ }
+
+}
+
+
+
+
+
+
+export default App
