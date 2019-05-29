@@ -8,9 +8,10 @@
     "start": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack -wd",
     "dev": "babel-node index.js",
-    "lint": "./node_modules/.bin/eslint ./src/components",
+    "lint": "./node_modules/.bin/eslint ./src",
     "precommit":"lint-staged"
   },
+   "eslintIgnore": ["bundle.js"],
   "lint-staged":{
     "*.js":[
       "npm run lint",
