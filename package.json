@@ -9,16 +9,17 @@
     "build": "./node_modules/.bin/webpack -wd",
     "dev": "babel-node index.js",
     "lint": "./node_modules/.bin/eslint ./src",
-    "precommit":"lint-staged"
+    "precommit": "lint-staged"
   },
-   "eslintIgnore": ["bundle.js"],
-  "lint-staged":{
-    "*.js":[
+  "eslintIgnore": [
+    "bundle.js","webpack.config.js"
+  ],
+  "lint-staged": {
+    "*.js": [
       "npm run lint",
       "prettier --write",
       "git add"
-      ]
-    
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -57,10 +58,11 @@
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "whatwg-fetch": "^3.0.0",
-    "classnames": "^2.2.6"
+    "react-router-dom": "^5.0.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }
