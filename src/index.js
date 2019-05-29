@@ -5,4 +5,4 @@ import './styles/index.css';
 
 const mountElement = document.getElementById('root');
 
-ReactDOM.render(<App/>, mountElement);
+ReactDOM.render(<App />, mountElement);
